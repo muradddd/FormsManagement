@@ -26,7 +26,7 @@ SECRET_KEY = '#@8p=1e=4kd68qm)u7=8vaww(_@ze8+-%p9@y$lg^lt&=fp^5_'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+AUTH_USER_MODEL='accounts.UserModel'
 
 # Application definition
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
 
     # Third-party modules
+   
 ]
 
 MIDDLEWARE = [
@@ -81,18 +82,22 @@ WSGI_APPLICATION = 'formsManagement.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db',
-        'USER': 'user',
-        'PASSWORD': '1',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'food_stories',
+        # 'USER':'root',
+        # 'HOST':'127.0.0.1',
+        # 'PORT':3306,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
+        
+
     }
 }
 
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
