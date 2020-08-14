@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a class="top-content-inner" href="{% url 'core:response-list' %}?form={{ object.pk }}">Responses</a>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div>
+        <h2>{{object.title}}</h2>
+        <h3>{{object.description}}</h3>
+    </div>
+    <div>
+        <input type="hidden" name="fieldCount" value="{{ object.field.count }}">
+        {% for field in object.field.all %}
+        <p>
+            {{ field.question }}
+            <input type="hidden" name="question-{{ forloop.counter0 }}" value="{{ field.question }}">
+        </p>
+        {% if field.answer_type == 'text' %}
+        <input type="text" name="answer-{{ forloop.counter0 }}">
+        {% elif field.answer_type == 'textarea' %}
+        <textarea id="" cols="30" rows="10" name="answer-{{ forloop.counter0 }}"></textarea>
+        {% elif field.answer_type == 'radio' %}
+        <input type="radio" name="answer-{{ forloop.counter0 }}" id="">
+        {% elif field.answer_type == 'checkbox' %}
+        <input type="checkbox" name="answer-{{ forloop.counter0 }}" id="" value="test">
+        <input type="checkbox" name="qanswer-{{ forloop.counter0 }}" id="">
+        {% elif field.answer_type == 'select' %}
+        <select name="answer-{{ forloop.counter0 }}" id="">
+            <option value="">1</option>
+        </select>
+        {% elif field.answer_type == 'date' %}
+        <input type="date" name="answer-{{ forloop.counter0 }}" id="">
+        {% endif %}
+        {% endfor %}
+    </div>
+    <input type="submit" name="" id="">
+</form>
+{% endblock content %}

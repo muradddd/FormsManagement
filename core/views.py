@@ -38,3 +38,23 @@ class HomePageView(FormMixin, TemplateView):
         
         return redirect(reverse_lazy('core:form-detail', kwargs={'pk': form.pk}))
 
+
+class FormDetailView(FormMixin, DetailView):
+    model = Forms
+    template_name = "form-detail.html"
+    form_class = FormsForm
+
+    def post(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            form = self.get_object()
+            answered_by = request.user
+            response = Response(form=form, answered_by=answered_by)
+            response.save()
+            field_count = request.POST.get('fieldCount')
+            for i in range(int(field_count)):
+                question = request.POST.get(f'question-{i}')
+                answer = request.POST.get(f'answer-{i}')
+                response_qa = ResponseQA(response=response, question=question, answer=answer)
+                response_qa.save()
+        
+        return redirect(reverse_lazy('core:form-detail', kwargs={'pk': self.get_object().pk}))
