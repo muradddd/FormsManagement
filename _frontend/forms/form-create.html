@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/018386192a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/main.css ">
+    <title>Quiz Form</title>
+</head>
+
+<body>
+    <section>
+        <div class="top-color">
+            <div class="top-content">
+                <a class="top-content-inner" href="./form-list.html">Questions</a>
+                <a class="top-content-inner" href="./response-list.html">Responses</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <svg id="plus-btn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z">
+                    </path>
+                </svg>
+                <div class="content-line"></div>
+                <form action="" method="post">
+                    <input type="hidden" name="fieldCount">
+                    <div class="main-content">
+                        <div class="form-header">
+                            <div id="form-items" class="px-3">
+                                <div class="row" id="formContent">
+                                    <div class="col-12">
+                                        <div class="header">
+                                            <input class="form-control form-control-lg content-input" type="text"
+                                                placeholder="Blank title">
+                                            <input class="form-control content-input" type="text"
+                                                placeholder="Form description">
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="./form-detail.html">Send</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+    </section>
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
