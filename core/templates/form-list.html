@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for form in object_list %}
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="card my-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ form.title }}</h5>
+                    <p class="card-text">{{ form.description }}</p>
+                    <p class="card-text">{{ form.created_by }}</p>
+                    <p class="card-text">{{ form.created_at }}</p>
+                    <a href="{% url 'core:form-detail' form.pk %}" class="btn btn-primary">Read more</a>
+                    <a href="{% url 'core:form-detail' form.pk %}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
