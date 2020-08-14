@@ -44,8 +44,9 @@ class UserModel(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=True)
     
                           
+    EMAIL_FIELD = 'email'
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['full_name']
+    REQUIRED_FIELDS = []
     objects = MyUserManager()
     class Meta:
         verbose_name = _('User')
