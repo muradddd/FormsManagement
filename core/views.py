@@ -17,4 +17,24 @@ class HomePageView(FormMixin, TemplateView):
         context["fieldForm"] = FieldForm
         return context
 
-# Create your views here.
+    def post(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            title = request.POST.get('title')
+            description = request.POST.get('description')
+            created_by = request.user
+            form = Forms(title=title, description=description, created_by=created_by)
+            form.save()
+            field_count = request.POST.get('fieldCount')
+            for i in range(int(field_count)+1):
+                question = request.POST.get(f'fieldIndex-{i}-question')
+                answer_type = request.POST.get(f'fieldIndex-{i}-answer_type')
+                is_required = request.POST.get(f'fieldIndex-{i}-is_required')
+                if is_required:
+                    is_required = True
+                else:
+                    is_required = False
+                field = Field(form=form, question=question, answer_type=answer_type, is_required=is_required)
+                field.save()
+        
+        return redirect(reverse_lazy('core:form-detail', kwargs={'pk': form.pk}))
+
