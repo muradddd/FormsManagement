@@ -58,3 +58,21 @@ class FormDetailView(FormMixin, DetailView):
                 response_qa.save()
         
         return redirect(reverse_lazy('core:form-detail', kwargs={'pk': self.get_object().pk}))
+
+class FormListView(ListView):
+    model = Forms
+    template_name = "form-list.html"
+
+
+class ResponseListView(ListView):
+    model = Response
+    template_name = "response-list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        form = self.request.GET.get('form')
+        if form:
+            context['responses'] = Response.objects.filter(form=form)
+        else:
+            context['responses'] = Response.objects.all()
+        return context

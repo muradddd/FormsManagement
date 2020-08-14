@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for response in responses %}
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="card my-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ response.form.title }}</h5>
+                    <p class="card-text">{{ response.form.description }}</p>
+                    <p class="card-text">{{ response.answered_by }}</p>
+                    <p class="card-text">{{ form.created_at }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
