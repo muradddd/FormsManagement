@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="top-color">
+            <div class="top-content">
+                <a class="top-content-inner" href="{% url 'core:form-list' %}">Questions</a>
+                <a class="top-content-inner" href="{% url 'core:response-list' %}">Responses</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <svg id="plus-btn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z">
+                    </path>
+                </svg>
+                <div class="content-line"></div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="fieldCount">
+                    <div class="main-content">
+                        <div class="form-header">
+                            <div id="form-items" class="px-3">
+                                <div class="row" id="formContent">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <p>Title</p>
+                                            {{ formsForm.title }}
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Description</p>
+                                            {{ formsForm.description }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" value="Send">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+    </section>
+{% endblock content %}

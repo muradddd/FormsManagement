@@ -4,4 +4,5 @@ from core.views import HomePageView, FormDetailView, FormListView, ResponseListV
 app_name = 'core'
 
 urlpatterns = [
+    path('', HomePageView.as_view(), name='home'),
 ]
