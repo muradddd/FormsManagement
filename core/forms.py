@@ -5,6 +5,10 @@ class FormsForm(forms.ModelForm):
     class Meta:
         model = Forms
         fields = ('title', 'description',)
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control form-control-lg content-input', 'placeholder': 'Blank title'}),
+            'description': forms.TextInput(attrs={'class': 'form-control content-input', 'placeholder': 'Form description'}),
+        }
 
 class FieldForm(forms.ModelForm):
     class Meta:

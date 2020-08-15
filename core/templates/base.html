@@ -14,8 +14,13 @@
 </head>
 
 <body>
-{% block content %}
-{% endblock content %}
+    {% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock navbar %}
+
+
+    {% block content %}
+    {% endblock content %}
 
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

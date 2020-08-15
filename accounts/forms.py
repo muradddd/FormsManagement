@@ -2,7 +2,7 @@ from django import forms
 from accounts.models import UserModel
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 
-User=UserModel
+User=UserModel()
 class Registerform(UserCreationForm):#form.Modelforms
     
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control','placeholder':'First name'}))
@@ -14,7 +14,7 @@ class Registerform(UserCreationForm):#form.Modelforms
     
     class Meta:
         model = User
-        fields = ("first_name", "last_name", "username",'email','image')
+        fields = ("first_name", "last_name", "username",'email',)
   
 
 

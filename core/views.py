@@ -2,11 +2,12 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, DetailView, ListView
 from django.views.generic.edit import FormMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from core.forms import FormsForm, FieldForm
 from core.models import Forms, Field, Option,Response, ResponseQA
 
 
-class HomePageView(FormMixin, TemplateView):
+class HomePageView(LoginRequiredMixin, FormMixin, TemplateView):
     template_name = "index.html"
     form_class = FormsForm
 

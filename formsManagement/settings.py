@@ -138,7 +138,11 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-
+LOGIN_URL = '/account/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/account/login/'
+LOGIN_ERROR_URL = '/'
+LOGOUT_URL = 'logout'
 
 
 

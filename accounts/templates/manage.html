@@ -4,7 +4,7 @@
     {% if user.is_authenticated %}
 
     <h2>
-        <a href="/admin/">    Go To Dashboard</a>
+        <a href="/admin/"> Go To Dashboard</a>
 
     </h2>
     <hr>
@@ -12,8 +12,6 @@
     <a class="btn btn-primary mt-5" href="{% url 'logout' %}">Logout</a>
 
     {% else %}
-    <a class="btn btn-primary" href="{% url 'social:begin' 'google-oauth2' %}">
-            Login
-            </a>
+    Login
     {% endif %}
 </div>

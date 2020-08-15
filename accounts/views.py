@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from accounts.forms import Loginform, Registerform
 from django.views.generic import CreateView,FormView,View
 from django.shortcuts import render,redirect
@@ -14,12 +15,12 @@ User=get_user_model()
 def change_password(request):
     return render(request,'change_password.html')
 
-class LoginView(LoginView):
+class CustomLoginView(LoginView):
     template_name='login.html'
-    success_url='/'
     form_class=Loginform
   
-
+    def get_success_url(self):
+        return reverse_lazy('core:home')
 
 class RegisterView(CreateView):
     form_class=Registerform
@@ -33,7 +34,5 @@ class RegisterView(CreateView):
         return response
 
 class Logout(LogoutView):
-    # def get(self, request):
-    #     logout(request)
-    #     return redirect('/')
-    pass
+    def get_success_url(self):
+        return reverse_lazy('accounts:login')

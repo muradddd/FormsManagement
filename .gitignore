@@ -13,3 +13,4 @@ data/
 .debris/
 env
 user
+migrations
