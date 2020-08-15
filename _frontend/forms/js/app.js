@@ -2,7 +2,8 @@ $('.dropdown-toggle').dropdown()
 
 $('#myDropdown').on('show.bs.dropdown', function () {
   // do something…
-})
+});
+
 var index = 0;
 const addField = () => {
   var fieldSection = `<div div class="field-div col-12">

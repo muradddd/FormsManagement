@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Quiz Form</title>
 </head>
-<body>           
-    <section>  
+<body>  
+
+<section>  
         <div class="top-color">  
             <div class="top-content">
-                <a class="top-content-inner" href="#">Questions</a>  
-                <a class="top-content-inner" href="#">Responses</a>
+                <a class="top-content-inner" href="./form-list.html" target="_blank">Questions</a>  
+                <a class="top-content-inner" href="./response-list.html" target="_blank">Responses</a>
             </div>
         </div>
       
@@ -26,57 +27,43 @@
                 
                 <div class="main-content">
                     <div class="form-header">           
-                        <div class="header">
-                            <input class="form-control form-control-lg content-input" type="text" placeholder="Blank title">
-                            <input class="form-control content-input" type="text" placeholder="Form description">
-                        </div>
-                    <div id="form-items">
-                        <form>
-                            <div class="row">
-                              <div class="col">
-                                <input type="text" class="form-control content-input" placeholder="Untitled questions">
-                              </div>
-                              <div class="col">
-                                <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg" type="button">
-                                      Multiple choice
-                                    </button>
-                                    <button id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dLabel">
-                                        <a class="dropdown-item" href="#">Short answer</a>
-                                        <a class="dropdown-item" href="#">Paragraph</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Multiple choice</a>
-                                        <a class="dropdown-item" href="#">Checkbox</a>
-                                        <a class="dropdown-item" href="#">Dropdown</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">File upload</a>
-                                        <a class="dropdown-item" href="#">Date</a>
+                        <div id="form-items" class="px-3">
+                            <div class="row" id="formContent">
+                                <div class="col-12">
+                                    <div class="header">
+                                        <input class="form-control form-control-lg content-input" type="text"
+                                            placeholder="Blank title">
+                                        <input class="form-control content-input" type="text"
+                                            placeholder="Form description">
                                     </div>
-                                  </div>
-                              </div>
+                                </div>
                             </div>
-                        </form>
-
-                        <hr>
-
-                        <div class="icons-opt">
-                            <p><b>*</b>Required</p>
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z"/>
-                            </svg>
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                            </svg>
+                            
                         </div>
-                    </div>
+                    </div>   
                 </div>
             </div>
         </div>
-    </section>
+</section>
+
+<section class="second-section">
+    <div class="container">
+            <svg id="plus-btn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill"
+            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z">
+            </path>
+            </svg> 
+
+            <form action="" method="post">
+                <input type="hidden" name="fieldCount">
+            </form>
+            
+            </div>
+        </div>
+    </div>
+                   
+</section>
 
 
 <!-- JS, Popper.js, and jQuery -->
@@ -87,5 +74,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
