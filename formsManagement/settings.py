@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'django_celery_results',
     # Local apps
     'core.apps.CoreConfig',
     'accounts.apps.AccountsConfig',
+    'django_celery_beat',
 
     # Third-party modules
    
@@ -113,6 +114,32 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Baku'
+
+
+SITE_ADDRESS = 'http://localhost:8000'
+
+# Email configuration 
+# change your custom smtp configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'techacademy@gmail.com'
+EMAIL_HOST_PASSWORD = 'fsqcyadagqipthcz'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+
+
 
 
 # Internationalization
