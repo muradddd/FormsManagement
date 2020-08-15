@@ -6,7 +6,8 @@ User=UserModel()
 class Forms(models.Model):
     title=models.CharField('Title',max_length=200)
     description=models.CharField('Description',max_length=500)
-    
+    recipient = models.ForeignKey(UserModel, related_name='received_messages',
+        null=True, blank=True, on_delete=models.CASCADE)
     created_by = models.ForeignKey(User, related_name='forms',on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
